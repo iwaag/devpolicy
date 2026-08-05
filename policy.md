@@ -5,6 +5,7 @@ pj-(project_name)/ ... Project folder
 README.md
 README_DEV.md ... Dedicated for developers
 devdocs/episodes/(desire_title)/braindump/ ... Contains whatever describes the developer's desire
+devdocs/episodes/(desire_title)/braindump.txt ... simple one-file braindump
 devdocs/episodes/(desire_title)/roadmap.md ... Roadmap to fulfill the developer's desire
 devdocs/episodes/(desire_title)/plan.md ... Plan to fulfill the developer's desire
 devdocs/episodes/(desire_title)/p[phase number]/plan.md ... Plan for each phase in a roadmap
@@ -22,4 +23,4 @@ Plan and roadmap are optional. Report is strongly recommended.
 # Misc
 
 - English is recommended for generated texts.
-- DOn't include absolute local file path inside non-ignored files without user's approval
+- Don't include absolute local file path inside non-ignored files without proper justification and user's approval
