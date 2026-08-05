@@ -6,7 +6,7 @@ README.md
 README_DEV.md ... Dedicated for developers
 devdocs/episodes/(desire_title)/braindump/ ... Contains whatever describes the developer's desire
 devdocs/episodes/(desire_title)/braindump.txt ... simple one-file braindump
-devdocs/episodes/(desire_title)/roadmap.md ... Roadmap to fulfill the developer's desire
+devdocs/episodes/(desire_title)/roadmap.md ... Roadmap to fulfill the developer's desire. For heavy, long running episodes.
 devdocs/episodes/(desire_title)/plan.md ... Plan to fulfill the developer's desire
 devdocs/episodes/(desire_title)/p[phase number]/plan.md ... Plan for each phase in a roadmap
 devdocs/episodes/(desire_title)/p[phase number]/report.md ... Final report for each phase in a roadmap
