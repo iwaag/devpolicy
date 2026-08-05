@@ -22,4 +22,4 @@ Plan and roadmap are optional. Report is strongly recommended.
 # Misc
 
 - English is recommended for generated texts.
-- Try not include absolute local file path inside non-ignored files.
+- DOn't include absolute local file path inside non-ignored files without user's approval
