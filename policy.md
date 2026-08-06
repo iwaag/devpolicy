@@ -12,6 +12,7 @@ devdocs/episodes/(desire_title)/plan.md ... Plan to fulfill the developer's desi
 devdocs/episodes/(desire_title)/p[phase number]/plan.md ... Plan for each phase in a roadmap
 devdocs/episodes/(desire_title)/p[phase number]/report.md ... Final report for each phase in a roadmap
 devdocs/episodes/(desire_title)/p[phase number]/report[step number].md ... Report for each step in a plan
+devdocs/ent-episodes/ ... Episodes for Easier Next Time improve sessions
 
 
 devenv/ ... Contains resources for local development (such as Docker Compose)
