@@ -24,3 +24,11 @@ An explanation of human desire and imagination.
 - Humans can co-create braindumps with AI. Marking them as AI-assisted is optional as long as humans are involved.
 
 - AI can create braindumps if permitted by humans, only if they are clearly marked as AI-generated.
+
+# Episode
+
+Entire process of braindump -> discussion -> planning -> execution -> report
+
+# ENT (Easier Next Time) Episode
+
+Episode to improve workflow based on ENT policy

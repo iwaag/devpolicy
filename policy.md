@@ -5,17 +5,17 @@ pj-(project_name)/ ... Project folder
 README.md
 README_DEV.md ... Dedicated for developers
 devdocs/todo_done.md ... to memorize todo and done
-devdocs/episodes/(desire_title)/braindump/ ... Contains whatever describes the developer's desire
-devdocs/episodes/(desire_title)/braindump.txt ... simple one-file braindump
-devdocs/episodes/(desire_title)/roadmap.md ... Roadmap to fulfill the developer's desire. For heavy, long running episodes.
-devdocs/episodes/(desire_title)/plan.md ... Plan to fulfill the developer's desire
-devdocs/episodes/(desire_title)/p[phase number]/plan.md ... Plan for each phase in a roadmap
-devdocs/episodes/(desire_title)/p[phase number]/report.md ... Final report for each phase in a roadmap
-devdocs/episodes/(desire_title)/p[phase number]/report[step number].md ... Report for each step in a plan
-devdocs/ent-episodes/ ... Episodes for Easier Next Time improve sessions
+devdocs/episodes/(some folders)/braindump/ ... Contains whatever describes the developer's desire
+devdocs/episodes/(some folders)/braindump.txt(or .md) ... simple one-file braindump
+devdocs/episodes/(some folders)/roadmap.md ... Roadmap to fulfill the developer's desire. For heavy, long running episodes.
+devdocs/episodes/(some folders)/plan.md ... Plan to fulfill the developer's desire
+devdocs/episodes/(some folders)/p[phase number]/plan.md ... Plan for each phase in a roadmap
+devdocs/episodes/(some folders)/p[phase number]/report.md ... Final report for each phase in a roadmap
+devdocs/episodes/(some folders)/p[phase number]/report[step number].md ... Report for each step in a plan
+devdocs/ent-episodes/ ... Easier Next Time episodes to improve workflow
+devdocs/ent-episodes/(some folders)/problem.md ... ENT Episode often begis from problem explanation
 
-
-devenv/ ... Contains resources for local development (such as Docker Compose)
+devenv/ ... Contains resources for kick-starting local development (such as Docker Compose)
 
 Plan and roadmap are optional. Report is strongly recommended.
 
