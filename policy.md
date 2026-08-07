@@ -27,6 +27,8 @@ Plan and roadmap are optional. Report is strongly recommended.
 
 - English is recommended for generated texts.
 - Don't include absolute local file path inside non-ignored files without proper justification and user's approval
+- Hook Handing(To force agents to use tools and strip them of autonomy) is usually discouraged.
+- Tool Arming(To give agents tools and autonomy) is encouraged.
 
 # refs
 devpolicy/terms.md ... Read only when you need to check terminologies

@@ -36,3 +36,14 @@ Episode to improve workflow based on ENT policy
 # Reconcile
 
 To realize desire written in braindump and then prove it.
+
+# Hook Handing
+
+To strip agents of autonomy and force it to use specific scripts.
+Usually considerd bad practice.
+If you do that, just write scripts.
+
+# Tool Arming
+
+To give tools to agent and give autonomy to use it or not.
+Usually considered good parctice.
