@@ -1,7 +1,7 @@
 # Project folders
 pj-(project_name)/ ... Project folder
 
-# Typical files and folders inside project folders (just a recommendation)
+# Typical files and folders inside project folders (NOT rule, just a recommendation)
 README.md
 README_DEV.md ... Dedicated for developers
 devdocs/todo_done.md ... to memorize todo and done
