@@ -54,6 +54,13 @@ Agents inside the system are usually bound to their local workspace and limited 
 Omin agent often has the same capabilities as the human developers and communicate directly with them.
 If you are the agent reading this, you are likely the Omni Agent.
 
+# Entrance
+The conversational window where desire is expressed to an agent.
+Other endpoints (evidence reads, auth machinery) are not entrances.
+
+# Entrance Guide
+The capability/cost Q&A an entrance can answer ("what can you do", "what does it cost"), like `--help` on a CLI.
+
 # Deus Ex Machina
 Situation where an ousider agent like Omni Agent solves problems of agents inside the system.
 Perhaps it's positive when the goal is to complete a mission.

@@ -30,5 +30,24 @@ Plan and roadmap are optional. Report is strongly recommended.
 - Tool Implantation(To force agents to use tools and strip them of autonomy) is usually discouraged.
 - Tool Giving(To give agents tools and autonomy) is encouraged.
 
+# Agent guidelines (recommendations, not enforcement)
+
+## Single Entrance
+- An agent has exactly one desire-accepting conversational window.
+- Extra endpoints are fine when they are deterministic (evidence reads, auth machinery) — never a second place to express desire.
+- Auth may split entrances (cagent-style), but identity, not endpoint shape, decides what a request may do.
+
+## Entrance Guide
+- Every window should answer capability and cost questions ("what can you do", "what does it cost"), like `--help` on a CLI.
+- Tentative values and "unknown" are acceptable answers; absence of the Q&A form is not.
+
+## Agent ≠ Model
+- The backend model/harness is a swappable parameter of an agent, never its identity.
+- Every agentic run records which backend served it. See devpolicy/agent_records.md for the common record.
+
+## Deus Ex Machina note
+- When the Omni Agent performs work that belongs to an in-system agent, leave a one-line note in the episode doc: "did X for agent Y — handoff candidate".
+- Perhaps positive for the mission, perhaps negative for workflow growth; the note is the whole obligation.
+
 # refs
 devpolicy/terms.md ... Read only when you need to check terminologies
