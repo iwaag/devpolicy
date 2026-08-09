@@ -47,3 +47,14 @@ If you do that, just write scripts.
 
 To give agent tools and autonomy.
 Usually considered good parctice.
+
+# Omni Agent
+The AI agent which is editing this system from outside.
+Agents inside the system are usually bound to their local workspace and limited capabilities.
+Omin agent often has the same capabilities as the human developers and communicate directly with them.
+If you are the agent reading this, you are likely the Omni Agent.
+
+# Deus Ex Machina
+Situation where an ousider agent like Omni Agent solves problems of agents inside the system.
+Perhaps it's positive when the goal is to complete a mission.
+Perhaps it's negative when the goal is to develop independent workflow for agents inside the system.
