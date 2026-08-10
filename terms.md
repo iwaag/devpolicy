@@ -65,8 +65,8 @@ If you are the agent reading this, you are likely the Omni Agent.
 The conversational window where desire is expressed to an agent.
 Other endpoints (evidence reads, auth machinery) are not entrances.
 
-# Entrance Guide
-The capability/cost Q&A an entrance can answer ("what can you do", "what does it cost"), like `--help` on a CLI.
+# Single Entrance
+Only one entrance, or the policy which encourage an agent to have only one entrance.
 
 # Deus Ex Machina
 Situation where an ousider agent like Omni Agent solves problems of agents inside the system.
@@ -79,4 +79,4 @@ Give agents intentilally minimum or slightly insufficient infomation and tools t
 
 # Easier Next Time
 
-The policy to begin agent workflow from non-deterministic with maximum autonomy, and gradually improve it through Evidence-Driven Guidance and Tool Giving. 
+The policy to begin agent workflow from non-deterministic with maximum autonomy, and gradually improve it through Failure Farming, Evidence-Driven Guidance and Tool Giving. 
