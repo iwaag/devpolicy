@@ -1,0 +1,24 @@
+# Valid: agforge shape — one role, both standard harnesses selectable.
+schema = "ag.agent-config.v1"
+project = "agforge"
+
+[models."ollama/qwen3.6:35b-a3b-coding-nvfp4"]
+
+[models."anthropic/claude-sonnet-5"]
+
+[profiles.local-coder]
+harness = "opencode"
+model = "ollama/qwen3.6:35b-a3b-coding-nvfp4"
+
+[profiles.sonnet-coder]
+harness = "claude_code"
+model = "anthropic/claude-sonnet-5"
+
+# Test-only profile replacing the old AGFORGE_AGENT_CMD bypass.
+[profiles.stub]
+harness = "fake"
+model = "ollama/qwen3.6:35b-a3b-coding-nvfp4"
+
+[roles.generator]
+profile = "local-coder"
+requires = []

@@ -1,0 +1,13 @@
+# EXPECT: E_INCOMPATIBLE
+# claude_code serves anthropic models only; pairing it with an ollama
+# model must fail resolution, never silently fall back.
+schema = "ag.agent-config.v1"
+
+[models."ollama/qwen3.6:35b-a3b-coding-nvfp4"]
+
+[profiles.wrong-pair]
+harness = "claude_code"
+model = "ollama/qwen3.6:35b-a3b-coding-nvfp4"
+
+[roles.generator]
+profile = "wrong-pair"

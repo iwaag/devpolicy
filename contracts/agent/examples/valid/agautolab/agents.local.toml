@@ -1,0 +1,15 @@
+# Valid overlay: flips the front role to the local model on this node —
+# the contract replacement for `.local/.env` AUTOLAB_WINDOW_BACKEND.
+schema = "ag.agent-config.v1"
+
+[local.harness.claude_code]
+command_glob = "~/.vscode-server/extensions/anthropic.claude-code-*/resources/native-binary/claude"
+
+[local.provider.ollama]
+base_url = "http://127.0.0.1:11434"
+
+[local.secrets]
+gitea_token_file = "~/.local/state/gitea/agent.token"
+
+[roles.front]
+profile = "local-chat"

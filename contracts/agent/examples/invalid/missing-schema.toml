@@ -1,0 +1,11 @@
+# EXPECT: E_SCHEMA
+# No schema marker.
+
+[models."anthropic/claude-sonnet-5"]
+
+[profiles.sonnet-coder]
+harness = "claude_code"
+model = "anthropic/claude-sonnet-5"
+
+[roles.generator]
+profile = "sonnet-coder"

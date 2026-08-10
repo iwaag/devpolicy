@@ -1,0 +1,15 @@
+# EXPECT: E_OVERLAY_SCOPE
+# This file is an OVERLAY (agents.local.toml) example. Overlays may not
+# define new profiles or models — only local facts and role→profile
+# selection among committed profiles.
+schema = "ag.agent-config.v1"
+
+[local.harness.opencode]
+command = "~/.local/bin/opencode"
+
+[profiles.sneaky]
+harness = "opencode"
+model = "ollama/qwen3.6:35b-a3b-coding-nvfp4"
+
+[roles.front]
+profile = "sneaky"

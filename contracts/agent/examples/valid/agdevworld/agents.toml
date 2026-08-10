@@ -1,0 +1,26 @@
+# Valid: agdevworld shape — one front role that needs a browser-side
+# UI action channel (switch_view / show_image applied by the client).
+schema = "ag.agent-config.v1"
+project = "agdevworld"
+
+[models."ollama/qwen3.6:35b-a3b-coding-nvfp4"]
+
+[models."anthropic/claude-sonnet-5"]
+effort = "low"
+max_tokens = 4096
+
+[profiles.local-front]
+harness = "opencode"
+model = "ollama/qwen3.6:35b-a3b-coding-nvfp4"
+
+[profiles.sonnet-front]
+harness = "claude_code"
+model = "anthropic/claude-sonnet-5"
+
+# The browser client applies UI-only actions returned with the answer.
+[capabilities]
+provides = ["ui_actions"]
+
+[roles.front]
+profile = "local-front"
+requires = ["ui_actions"]

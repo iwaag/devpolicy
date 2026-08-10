@@ -1,0 +1,44 @@
+# Valid: agautolab shape — five roles, independently selectable,
+# one declaring a nested-harness capability requirement.
+schema = "ag.agent-config.v1"
+project = "agautolab"
+
+[models."ollama/qwen3.6:35b-a3b-coding-nvfp4"]
+
+[models."anthropic/claude-sonnet-5"]
+
+[profiles.local-chat]
+harness = "opencode"
+model = "ollama/qwen3.6:35b-a3b-coding-nvfp4"
+
+[profiles.sonnet-agentic]
+harness = "claude_code"
+model = "anthropic/claude-sonnet-5"
+
+[profiles.stub]
+harness = "fake"
+model = "anthropic/claude-sonnet-5"
+
+# The window role may shell out to a nested director run; that channel
+# is provided by the gateway's PATH/allowlist arrangement, declared here
+# so a deployment without it fails resolution instead of failing mid-run.
+[capabilities]
+provides = ["nested_harness"]
+
+[roles.front]
+profile = "sonnet-agentic"
+requires = ["nested_harness"]
+
+[roles.director]
+profile = "sonnet-agentic"
+
+[roles.mediator]
+profile = "sonnet-agentic"
+
+# job.yaml `profile:` may override this per job; the value must still
+# name a profile declared above.
+[roles.coding]
+profile = "sonnet-agentic"
+
+[roles.summarizer]
+profile = "sonnet-agentic"

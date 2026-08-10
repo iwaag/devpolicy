@@ -1,0 +1,12 @@
+# EXPECT: E_BAD_MODEL_ID
+# Model ID lacks the provider/ prefix — the legacy unprefixed spelling.
+schema = "ag.agent-config.v1"
+
+[models."claude-sonnet-5"]
+
+[profiles.sonnet-coder]
+harness = "claude_code"
+model = "claude-sonnet-5"
+
+[roles.generator]
+profile = "sonnet-coder"

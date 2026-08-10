@@ -1,0 +1,12 @@
+# EXPECT: E_UNKNOWN_PROFILE
+# The role selects a profile that is never declared.
+schema = "ag.agent-config.v1"
+
+[models."anthropic/claude-sonnet-5"]
+
+[profiles.sonnet-coder]
+harness = "claude_code"
+model = "anthropic/claude-sonnet-5"
+
+[roles.front]
+profile = "fast-cheap"

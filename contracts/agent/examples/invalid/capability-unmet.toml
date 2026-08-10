@@ -1,0 +1,14 @@
+# EXPECT: E_CAPABILITY_UNMET
+# The role requires a UI action channel, but neither the harness nor any
+# declared [capabilities].provides supplies "ui_actions".
+schema = "ag.agent-config.v1"
+
+[models."ollama/qwen3.6:35b-a3b-coding-nvfp4"]
+
+[profiles.local-front]
+harness = "opencode"
+model = "ollama/qwen3.6:35b-a3b-coding-nvfp4"
+
+[roles.front]
+profile = "local-front"
+requires = ["ui_actions"]

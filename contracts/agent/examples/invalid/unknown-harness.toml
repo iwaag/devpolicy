@@ -1,0 +1,13 @@
+# EXPECT: E_UNKNOWN_HARNESS
+# "ollama" is a model provider, not a harness — the exact legacy
+# collision this contract removes.
+schema = "ag.agent-config.v1"
+
+[models."ollama/qwen3.6:35b-a3b-coding-nvfp4"]
+
+[profiles.local-coder]
+harness = "ollama"
+model = "ollama/qwen3.6:35b-a3b-coding-nvfp4"
+
+[roles.generator]
+profile = "local-coder"
