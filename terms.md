@@ -3,17 +3,7 @@
 Just terminology.
 Not rules to be applied.
 Not policies to be enforced.
-Not concrete workflows.
-
-# Easier Next Time
-
-The policy that believes it is a good thing to review a non-deterministic process after its completion or cancellation.
-
-- Even better if it is made easier and more stable next time. If there were problems during an execution, they should be recorded, reviewed, and resolved someday.
-
-- If it is a fundamentally deterministic process, it would be great if it were made deterministic with one command.
-
-- If it is a fundamentally non-deterministic process, it can stay non-deterministic, but helpful information such as guidelines or hints for future execution is encouraged.
+Not concrete workflows
 
 # Braindump
 
@@ -37,16 +27,33 @@ Episode to improve workflow based on ENT policy
 
 To realize desire written in braindump and then prove it.
 
+# Shackle
+
+Noun: Forced route to determinsitic process in agentic worklow.
+Verb: To add forced route to determinsitic process in agentic worklow.
+
+# Unshackle
+
+To remove forced route to determinsitic process in agentic worklow.
+
 # Tool Implantation
 
-To strip agents of autonomy and force it to use specific tools.
+To strip agents of autonomy and force it to use specific tools with a lot of shackle.
 Usually considerd bad practice.
 If you do that, just write scripts.
 
 # Tool Giving
 
-To give agent tools and autonomy.
+To give agent tools and autonomy with minimum/zero shackle.
 Usually considered good parctice.
+
+# Anxiety-Driven Guidance
+
+Unnecesary rules, prohibitions, instructions given to agents only because instructor was anxious, or simply bacause they don't trust agents. Usually has no proven positive effect to performance.
+
+# Evidence-Driven Guidance
+
+Rules, prohibitions, instructions which are supported by proven positive effects.
 
 # Omni Agent
 The AI agent which is editing this system from outside.
@@ -65,3 +72,11 @@ The capability/cost Q&A an entrance can answer ("what can you do", "what does it
 Situation where an ousider agent like Omni Agent solves problems of agents inside the system.
 Perhaps it's positive when the goal is to complete a mission.
 Perhaps it's negative when the goal is to develop independent workflow for agents inside the system.
+
+# Failure Farming
+
+Give agents intentilally minimum or slightly insufficient infomation and tools to gather informartive failure result. 
+
+# Easier Next Time
+
+The policy to begin agent workflow from non-deterministic with maximum autonomy, and gradually improve it through Evidence-Driven Guidance and Tool Giving. 
