@@ -4,7 +4,7 @@ schema = "ag.agent-config.v1"
 
 [models."anthropic/claude-sonnet-5"]
 
-[profiles.sonnet-coder]
+[profiles.sonnet]
 harness = "claude_code"
 model = "anthropic/claude-sonnet-5"
 

@@ -85,14 +85,20 @@ projects must not store a second, unprefixed spelling.
 A profile names a compatible (harness, model) pair:
 
 ```toml
-[profiles.local-coder]
+[profiles.local]
 harness = "opencode"
 model = "ollama/qwen3.6:35b-a3b-coding-nvfp4"
 
-[profiles.sonnet-coder]
+[profiles.sonnet]
 harness = "claude_code"
 model = "anthropic/claude-sonnet-5"
 ```
+
+The standard cross-project profiles are `local` (OpenCode plus the declared
+local Ollama coding model), `sonnet` (Claude Code plus the declared Anthropic
+Sonnet model), and test-only `stub` (`fake` plus the declared local model).
+An adopter may add a project-only profile when it has a real need, but every
+standard profile it declares must retain that same harness/model identity.
 
 Validation: the harness must be canonical (§2), the model declared
 (§3), and the model's provider must be compatible with the harness per
@@ -107,7 +113,7 @@ A role is a project-owned agent identity that selects a profile:
 
 ```toml
 [roles.generator]
-profile = "local-coder"
+profile = "local"
 requires = []              # capability names, see §7
 ```
 
@@ -147,7 +153,7 @@ gitea_token_env = "GITEA_TOKEN"
 
 # 4. Role→profile selection override
 [roles.front]
-profile = "sonnet-coder"
+profile = "sonnet"
 ```
 
 Rules:

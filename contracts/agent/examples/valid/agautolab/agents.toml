@@ -7,17 +7,17 @@ project = "agautolab"
 
 [models."anthropic/claude-sonnet-5"]
 
-[profiles.local-chat]
+[profiles.local]
 harness = "opencode"
 model = "ollama/qwen3.6:35b-a3b-coding-nvfp4"
 
-[profiles.sonnet-agentic]
+[profiles.sonnet]
 harness = "claude_code"
 model = "anthropic/claude-sonnet-5"
 
 [profiles.stub]
 harness = "fake"
-model = "anthropic/claude-sonnet-5"
+model = "ollama/qwen3.6:35b-a3b-coding-nvfp4"
 
 # The window role may shell out to a nested director run; that channel
 # is provided by the gateway's PATH/allowlist arrangement, declared here
@@ -26,19 +26,19 @@ model = "anthropic/claude-sonnet-5"
 provides = ["nested_harness"]
 
 [roles.front]
-profile = "sonnet-agentic"
+profile = "sonnet"
 requires = ["nested_harness"]
 
 [roles.director]
-profile = "sonnet-agentic"
+profile = "sonnet"
 
 [roles.mediator]
-profile = "sonnet-agentic"
+profile = "sonnet"
 
 # job.yaml `profile:` may override this per job; the value must still
 # name a profile declared above.
 [roles.coding]
-profile = "sonnet-agentic"
+profile = "sonnet"
 
 [roles.summarizer]
-profile = "sonnet-agentic"
+profile = "sonnet"

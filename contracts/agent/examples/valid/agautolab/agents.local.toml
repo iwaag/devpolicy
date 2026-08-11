@@ -12,4 +12,4 @@ base_url = "http://127.0.0.1:11434"
 gitea_token_file = "~/.local/state/gitea/agent.token"
 
 [roles.front]
-profile = "local-chat"
+profile = "local"

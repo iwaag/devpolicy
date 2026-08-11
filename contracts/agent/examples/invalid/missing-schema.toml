@@ -3,9 +3,9 @@
 
 [models."anthropic/claude-sonnet-5"]
 
-[profiles.sonnet-coder]
+[profiles.sonnet]
 harness = "claude_code"
 model = "anthropic/claude-sonnet-5"
 
 [roles.generator]
-profile = "sonnet-coder"
+profile = "sonnet"
