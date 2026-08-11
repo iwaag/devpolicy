@@ -44,7 +44,7 @@ If you do that, just write scripts.
 
 # Tool Giving
 
-To give agent tools and autonomy with minimum/zero shackle.
+To give agent tools and sufficient usage infomation, and autonomy with minimum/zero shackle.
 Usually considered good parctice.
 
 # Anxiety-Driven Guidance
