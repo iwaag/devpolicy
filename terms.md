@@ -47,6 +47,10 @@ If you do that, just write scripts.
 To give agent tools and sufficient usage infomation, and autonomy with minimum/zero shackle.
 Usually considered good parctice.
 
+# Unexplained Chainsaw
+
+Powerful tools given without sufficient usage information.  
+
 # Anxiety-Driven Guidance
 
 Unnecesary rules, prohibitions, instructions given to agents only because instructor was anxious, or simply bacause they don't trust agents. Usually has no proven positive effect to performance.
