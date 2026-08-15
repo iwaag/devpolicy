@@ -36,15 +36,14 @@ Closed vocabulary in v1 — configs reference these, never define them:
 
 | harness | meaning | provider compatibility |
 |---|---|---|
-| `opencode` | OpenCode CLI headless run (`opencode run`) | any provider the deployment configures (`ollama`, `anthropic`, …) |
 | `claude_code` | Claude Code CLI headless run (`claude -p`) | `anthropic` only |
 | `agcode` | single-file agentic loop over the Anthropic Messages API, shipped with the reference implementation (`python -m agag.agcode`) | any provider serving a Messages API endpoint (`ollama`, `anthropic`, …) |
 | `fake` | test-only stub; never invokes a real model | any |
 
-Ollama is **not** a harness; it is a model provider reachable through
-OpenCode. Direct provider API calls (Ollama `/api/chat`, Anthropic
-Messages SDK) are not harnesses in v1 and have no ID; migrating off them
-is the point of the roadmap. **`agcode` is the one stated exception**: it
+Ollama is **not** a harness; it is a model provider a harness reaches.
+Direct provider API calls (Ollama `/api/chat`, Anthropic Messages SDK) are
+not harnesses in v1 and have no ID; migrating off them is the point of the
+roadmap. **`agcode` is the one stated exception**: it
 talks to a Messages API endpoint directly, with no third-party CLI in
 between, and is still a harness because it is a complete agentic run — a
 tool loop with a working directory, a turn budget, a wall-clock deadline,
@@ -53,10 +52,21 @@ the carve-out preserves is that a *single request/response* is not a
 harness; the ID belongs to the loop around it. Any other harness name is
 `E_UNKNOWN_HARNESS`.
 
-`agcode` was added to this closed v1 vocabulary after the first three IDs.
-An implementation predating the row rejects an `agcode` profile with
-`E_UNKNOWN_HARNESS`, which is the correct no-silent-fallback behavior (§8);
-a consumer adopting such a profile upgrades its pin first.
+This closed vocabulary has changed twice, and neither change carries a
+compatibility shim — `E_UNKNOWN_HARNESS` on either side is the correct
+no-silent-fallback behavior (§8), and a consumer moves its pin and its
+profiles together.
+
+- `agcode` was **added** after the original IDs. An implementation predating
+  the row rejects an `agcode` profile.
+- `opencode` (`opencode run`, any configured provider) was **removed** once
+  nothing ran on it. An implementation newer than that change rejects an
+  `opencode` profile. Its intrinsic capabilities were `agentic_tools` and
+  `workspace_fs`, the same pair `agcode` provides, so a profile that only
+  needed those migrates by changing the harness name and the endpoint
+  spelling: `agcode` posts to `{base_url}/v1/messages`, so a
+  `local.provider.*.base_url` written for an OpenAI-compatible client loses
+  its `/v1` suffix.
 
 `fake` exists so conformance fixtures and deterministic tests can share
 one spelling across projects. Runs recorded against `fake` must be
@@ -88,9 +98,9 @@ Every model a config uses must be declared in its `[models]` table:
 Declaring a model does not promise it is pulled/available on a given
 machine; it fixes the spelling. A profile referencing an undeclared
 model is `E_UNKNOWN_MODEL`. When a harness needs the provider-native
-name (e.g. `claude --model claude-sonnet-5`, `opencode -m
-ollama/qwen3.6:...`), the loader derives it from the canonical ID;
-projects must not store a second, unprefixed spelling.
+name (e.g. `claude --model claude-sonnet-5`, `python -m agag.agcode --model
+qwen3.6:...`), the loader derives it from the canonical ID; projects must not
+store a second, unprefixed spelling.
 
 ## 4. Profiles
 
@@ -98,7 +108,7 @@ A profile names a compatible (harness, model) pair:
 
 ```toml
 [profiles.local]
-harness = "opencode"
+harness = "agcode"
 model = "ollama/qwen3.6:35b-a3b-coding-nvfp4"
 
 [profiles.sonnet]
@@ -106,7 +116,7 @@ harness = "claude_code"
 model = "anthropic/claude-sonnet-5"
 ```
 
-The standard cross-project profiles are `local` (OpenCode plus the declared
+The standard cross-project profiles are `local` (agcode plus the declared
 local Ollama coding model), `sonnet` (Claude Code plus the declared Anthropic
 Sonnet model), and test-only `stub` (`fake` plus the declared local model).
 An adopter may add a project-only profile when it has a real need, but every
@@ -148,15 +158,13 @@ The overlay may contain only:
 schema = "ag.agent-config.v1"
 
 # 1. Harness runtime facts
-[local.harness.opencode]
-command = "~/.local/bin/opencode"        # executable path
 [local.harness.claude_code]
 command_glob = "~/.vscode-server/extensions/anthropic.claude-code-*/resources/native-binary/claude"
 # glob → newest match wins; no match is a resolution failure at run time
 
 # 2. Provider endpoints
 [local.provider.ollama]
-base_url = "http://example-host:11434"
+base_url = "http://example-host:11434"   # bare base URL; agcode appends /v1/messages
 
 # 3. Secret references (never values)
 [local.secrets]
@@ -188,8 +196,8 @@ launch a nested harness run. Capabilities make that need explicit and
 checkable instead of implicit.
 
 - Harness-intrinsic capabilities (fixed by §2 semantics):
-  `opencode`, `claude_code` and `agcode` provide `agentic_tools` and
-  `workspace_fs`; `fake` provides whatever the test declares.
+  `claude_code` and `agcode` provide `agentic_tools` and `workspace_fs`;
+  `fake` provides whatever the test declares.
 - Deployment-provided capabilities are declared in config:
 
 ```toml

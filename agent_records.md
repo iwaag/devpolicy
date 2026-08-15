@@ -11,7 +11,7 @@ Per agentic run, record:
 - **request/job id** — whatever identifies the run in that workspace
   (a request_id, a job name + iteration number).
 - **backend** — the model + harness that served the run
-  (e.g. `opencode + ollama/<model>`, `claude -p + claude-sonnet-5`,
+  (e.g. `agcode + ollama/<model>`, `claude -p + claude-sonnet-5`,
   an autolab adapter name + its model).
 - **outcome** — done / failed / aborted.
 - **cost / time** — when the backend reports them (USD cost, duration,
