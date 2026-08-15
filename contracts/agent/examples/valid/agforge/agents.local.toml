@@ -2,9 +2,6 @@
 # Paths are illustrative placeholders, not committed machine facts.
 schema = "ag.agent-config.v1"
 
-[local.harness.opencode]
-command = "~/.local/bin/opencode"
-
 [local.harness.claude_code]
 command_glob = "~/.vscode-server/extensions/anthropic.claude-code-*/resources/native-binary/claude"
 
