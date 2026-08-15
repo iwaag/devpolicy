@@ -38,13 +38,25 @@ Closed vocabulary in v1 — configs reference these, never define them:
 |---|---|---|
 | `opencode` | OpenCode CLI headless run (`opencode run`) | any provider the deployment configures (`ollama`, `anthropic`, …) |
 | `claude_code` | Claude Code CLI headless run (`claude -p`) | `anthropic` only |
+| `agcode` | single-file agentic loop over the Anthropic Messages API, shipped with the reference implementation (`python -m agag.agcode`) | any provider serving a Messages API endpoint (`ollama`, `anthropic`, …) |
 | `fake` | test-only stub; never invokes a real model | any |
 
 Ollama is **not** a harness; it is a model provider reachable through
 OpenCode. Direct provider API calls (Ollama `/api/chat`, Anthropic
 Messages SDK) are not harnesses in v1 and have no ID; migrating off them
-is the point of the roadmap. Any other harness name is
+is the point of the roadmap. **`agcode` is the one stated exception**: it
+talks to a Messages API endpoint directly, with no third-party CLI in
+between, and is still a harness because it is a complete agentic run — a
+tool loop with a working directory, a turn budget, a wall-clock deadline,
+and results normalized into §9 — rather than a bare model call. The rule
+the carve-out preserves is that a *single request/response* is not a
+harness; the ID belongs to the loop around it. Any other harness name is
 `E_UNKNOWN_HARNESS`.
+
+`agcode` was added to this closed v1 vocabulary after the first three IDs.
+An implementation predating the row rejects an `agcode` profile with
+`E_UNKNOWN_HARNESS`, which is the correct no-silent-fallback behavior (§8);
+a consumer adopting such a profile upgrades its pin first.
 
 `fake` exists so conformance fixtures and deterministic tests can share
 one spelling across projects. Runs recorded against `fake` must be
@@ -176,7 +188,7 @@ launch a nested harness run. Capabilities make that need explicit and
 checkable instead of implicit.
 
 - Harness-intrinsic capabilities (fixed by §2 semantics):
-  `opencode` and `claude_code` provide `agentic_tools` and
+  `opencode`, `claude_code` and `agcode` provide `agentic_tools` and
   `workspace_fs`; `fake` provides whatever the test declares.
 - Deployment-provided capabilities are declared in config:
 
