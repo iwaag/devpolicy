@@ -18,9 +18,22 @@ Per agentic run, record:
   turns, tokens). Missing values are fine; invented values are not.
 - **on failure: a free-text report in the agent's own words.** The
   harness may fix only the path; the content is always the agent's.
+- **what was asked for**, when somebody asked. Since `runtime-profile`
+  (2026-09-09) a conversation may name a public **execution option**
+  (`ag.exec-options.v1`) and the run records it — the option, where the
+  selection came from, and the message it was frozen from — *beside* the
+  backend, never instead of it. The option is a request; the backend is the
+  fact, and a record that carried only one of them cannot answer either
+  "why did this run on agy" or "what actually served it".
 
 Comparing or exploiting the records is out of scope here — recording is
 the whole obligation.
+
+A recorded field is only recorded if it reaches the **file**. `runtime-profile`
+step5 shipped the execution option into the dict a run returned and not into
+the record on disk, because the writer copies an allowlist and nobody had
+added it there; every test asserted on the returned dict. Assert on what is
+written.
 
 ## Existing precedents (this policy generalizes what they already do)
 
