@@ -33,3 +33,7 @@ Plan and roadmap are optional. Report is strongly recommended.
 - Don't include absolute local file path inside non-ignored files without proper justification and user's approval
 - Tool Implantation(To force agents to use tools and strip them of autonomy) is usually discouraged.
 - Tool Giving(To give agents tools and autonomy) is encouraged.
+
+### Agent guides
+
+A conversational agent's guide opens with a short head: who the agent is, who it speaks with, what is assumed of it, and what it can see (the tools, each with what it tells you and how to get its `--help`). The body states the facts the agent works under, not procedures under conditions. Each fact lives in one place: a tool's usage in that tool's `--help`, text shared by several roles in one shared file, and a role's own contract in its guide. A paragraph written after a seen-live failure or a named trial keeps its trial reference wherever it moves.
