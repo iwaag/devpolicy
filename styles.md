@@ -30,7 +30,7 @@ Plan and roadmap are optional. Report is strongly recommended.
 ### Misc
 
 - English is recommended for generated texts.
-- Don't include absolute local file path inside non-ignored files without proper justification and user's approval
+- Absolute local file paths are machine-specific: they do not resolve on other machines and reveal local layout, so tracked files usually use relative paths.
 - Tool Implantation(To force agents to use tools and strip them of autonomy) is usually discouraged.
 - Tool Giving(To give agents tools and autonomy) is encouraged.
 
