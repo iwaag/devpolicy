@@ -18,6 +18,7 @@ devdocs/episodes/(some folders)/p[phase number]/report.md ... Final report for e
 devdocs/episodes/(some folders)/p[phase number]/report[step number].md ... Report for each step in a plan
 devdocs/ent-episodes/ ... Easier Next Time episodes to improve workflow
 devdocs/ent-episodes/(some folders)/problem.md ... ENT Episode often begis from problem explanation
+devdocs/runs/(workflow)/(run)/ ... A workflow run's records and documents (plan.md, report.md, ...), written by WFE and the run's agent
 
 devenv/ ... Contains resources for kick-starting local development (such as Docker Compose)
 
@@ -33,6 +34,30 @@ Plan and roadmap are optional. Report is strongly recommended.
 - Absolute local file paths are machine-specific: they do not resolve on other machines and reveal local layout, so tracked files usually use relative paths.
 - Tool Implantation(To force agents to use tools and strip them of autonomy) is usually discouraged.
 - Tool Giving(To give agents tools and autonomy) is encouraged.
+
+### Keeping a project tidy
+
+A project is tidy when a reader learns what it is and does now from its entry, without reverse-engineering
+its source and without mistaking one run's record for the whole project (tidy p1: ponderer reported
+protoprey's adopted wolf scene as missing after a source search found no GLB, while a root `report.md` left
+by an unrelated run said "no game code was played"; devdocs/episodes/tidy/p1/).
+
+- One maintained entry, `README.md`, says what the project does now: capabilities, what it offers other
+  projects, how to set it up and run it, where it was tested, known limits. History is linked and labelled
+  as history, not mixed into the current account.
+- A run's or an episode's record stays in its own folder (`devdocs/runs/...`, `devdocs/episodes/...`). A root
+  `report.md`, `answer.md` or `review.md` reads as the project's own and is overwritten by the next run that
+  writes one. Moving a record keeps its content and provenance and updates what refers to it.
+- Capability, installed bytes and verification are separate facts. An adopted delivery is part of the
+  project while its bytes live in an ignored folder; a source search that finds nothing is not evidence
+  that a feature is absent.
+- Generated caches and build outputs (a Godot project's `.godot/`, `__pycache__`, ...) are ignored rather
+  than tracked once the sources reproduce them. Intentional media and evidence stay.
+- Facts of one machine belong to local files and context mechanisms; portable text states what is
+  required, not which host has it. Records whose domain is machines (a cluster's) keep their evidence.
+- Domain folders (`knowledge/`, `lab/`, `study/`, `wedo/`, archives, named deliverables) are legitimate.
+  Tidying repairs demonstrated ambiguity, misplaced records, broken references and irreproducible state,
+  not differences from the example layout, and never rewrites history.
 
 ### Project cooperation
 
