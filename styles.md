@@ -91,6 +91,10 @@ report that was never written and a README with one host's addresses within seco
 - The receiver compares the claim with the documents, artifacts and verification records before accepting or
   summarizing it. What it cannot check it inspects, or says it did not. Something missing goes back to its owner,
   and the corrected result is checked again: an earlier judgement does not cover a newer result.
+- Who found a defect, who asked for the work and who reviewed the result are separate facts. A receiver's own finding
+  is recorded as its own, with what it checked, even when it reopens its own earlier acceptance; a go-ahead or an
+  instruction is neither the finding nor a review (tidy p3: a correction citing a go-ahead read as the person's review;
+  devdocs/episodes/tidy/p3/).
 - A summary of several commissioned results accounts for each one: its disposition and its remaining limits.
 - Records state facts and the gaps in them. A reminder or a tidy step is evidence that the question was asked,
   not that it was answered well. Neither its presence nor its absence proves quality or a defect.
