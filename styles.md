@@ -78,6 +78,23 @@ protoprey adopted gimmickimg's and playprey's results; devdocs/episodes/project_
   environment variables), not tracked code. A consumer that delegates generation needs no endpoint.
 - A replacement is another adoption; the previous identity stays in the record, and adopted outputs are kept.
 
+### Reporting and accepting results
+
+A result that is handed over is a claim, and its record is the evidence. In tidy p1 a receiving agent accepted a
+report that was never written and a README with one host's addresses within seconds, from the outcome line
+(devdocs/episodes/tidy/p1/, p2/).
+
+- The producer's report says what changed and at which revision, which checks actually ran and their results,
+  where the report and artifacts are, and what is unverified, deliberately unchanged or open. Work that changes
+  what readers rely on (entry, guide, setup, deliveries) keeps them true in the same work; a tidy pass reports
+  evidence rather than repeating itself.
+- The receiver compares the claim with the documents, artifacts and verification records before accepting or
+  summarizing it. What it cannot check it inspects, or says it did not. Something missing goes back to its owner,
+  and the corrected result is checked again: an earlier judgement does not cover a newer result.
+- A summary of several commissioned results accounts for each one: its disposition and its remaining limits.
+- Records state facts and the gaps in them. A reminder or a tidy step is evidence that the question was asked,
+  not that it was answered well. Neither its presence nor its absence proves quality or a defect.
+
 ### Agent guides
 
 A conversational agent's guide opens with a short head: who the agent is, who it speaks with, what is assumed of it, and what it can see (the tools, each with what it tells you and how to get its `--help`). The body states the facts the agent works under, not procedures under conditions. Each fact lives in one place: a tool's usage in that tool's `--help`, text shared by several roles of one agent in that agent's shared file, text shared by several agents in the shared library they all use, and a role's own contract in its guide. A role that answers with files instead of speech keeps its output contract; its head says who reads the files and what it may consult. A paragraph written after a seen-live failure or a named trial keeps its trial reference wherever it moves.
